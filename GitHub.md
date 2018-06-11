@@ -13,3 +13,13 @@ git remote add origin https://github.com/******.git 	#新建远程仓库分支 o
 git push -u origin master 		#上传到远程仓库分支
 ```
 
+## 注意：
+
+每次更新时，都需要执行：
+
+```sh
+git add 文件名
+git commit -m "描述"
+git push -u origin master 		#上传到远程仓库分支
+```
+
