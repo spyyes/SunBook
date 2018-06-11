@@ -1,24 +1,24 @@
 #Mvn
 
-<!-- 编译test -->
+编译test
 
 ```
 mvn test
 ```
 
-<!-- 生成jar包，并忽略Test，因为Test跑不通-->
+生成jar包，并忽略Test，因为Test跑不通
 
 ```sh
 mvn package -DskipTests
 ```
 
-<!-- 查看项目依赖并下载的JAR包，一般目录在target/dependency，如需修改目录见下面的code -->
+查看项目依赖并下载的JAR包，一般目录在target/dependency，如需修改目录见下面的code
 
 ```sh
 mvn dependency:copy-dependencies
 ```
 
-<!-- 针对test 生成jar包 ; 需要在pom.xml添加--> 
+针对test 生成jar包 ; 需要在pom.xml添加
 
 ```xml
       <plugin>
@@ -35,7 +35,7 @@ mvn dependency:copy-dependencies
       </plugin>
 ```
 
-<!-- 修改dependency下载的位置，需要在pom.xml中添加 -->
+修改dependency下载的位置，需要在pom.xml中添加
 
 ```xml
         <plugin>
@@ -48,7 +48,7 @@ mvn dependency:copy-dependencies
         </plugin>
 ```
 
-<!-- 清空项目 -->
+清空项目
 
 ```sh
 mvn clean
