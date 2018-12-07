@@ -50,7 +50,7 @@ mvn dependency:copy-dependencies
         </plugin>
 ```
 
-清空项目
+清空项目的缓存，以便重新编译
 
 ```sh
 mvn clean
