@@ -4,7 +4,7 @@
 
 编译test
 
-```
+```sh
 mvn test
 ```
 
