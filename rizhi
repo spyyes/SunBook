@@ -1,0 +1,3 @@
+666 学会了(c++)函数指针的强制类型转换
+666 st_tee_initialze(&st_handle, *model_Ptr)
+第2个参数是指向模型的指针，如果是内置模型直接设成null就可以
