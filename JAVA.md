@@ -1,5 +1,0 @@
-implements
-extends
-
-protected private public
-
