@@ -23,3 +23,78 @@ sed -i "/^\s*versionName\s\".*\"$/s/\".*\"/\"$ID\"/g" ./FaceUnlockDemo/build.gra
 
 ### 命令行里一键删除输入 ctrl + u
 
+### .gitignore文件
+
+git中指定忽略这些文件的提交。比如/build
+
+### git 丢弃当前分支所有本地修改
+
+```sh
+git reset --hard origin/master
+```
+
+### git fetch & git pull
+
+因此，与git pull相比git fetch相当于是从远程获取最新版本到本地，但不会自动merge。如果需要有选择的合并git fetch是更好的选择。效果相同时git pull将更为快捷。
+
+### git 将A分支的修改同步到B分支
+
+```sh
+git checkout B
+git cherry-pick A <file>
+```
+
+### mmm
+
+在TA/CA项目中用到。在build/envsetup.sh中设置环境。
+
+mmm是安卓项目构建。
+
+### SConstruct文件
+
+> http://www.360doc.com/content/16/0421/17/478627_552627544.shtml
+
+相当于Makefile文件，TA部分的项目用到了Scons构建。
+
+内容是Python脚本，scons读入它时，会把脚本命令都读一遍。
+
+Library() 库编译
+
+StaticLibrary()显式编译静态库
+
+SharedLibrary 编译动态库
+
+Program()库链接
+
+### adb remount
+
+将/system部分置于可写入的模式，默认情况下/system只是只读模式。
+
+只适用于被root的设备。
+
+### Makefile.am
+
+比Makefile更高级的编译规则。
+
+### GCC编译
+
+### Makefile
+
+在构建项目时经常会用到。
+
+> http://www.ruanyifeng.com/blog/2015/02/make.html
+
+### 编译时多态和运行时多态
+
+方法重载是编译时多态。
+
+@Override 和 @Overload
+
+### scp传输到本地
+
+```sh
+scp (-r) sensetime@10.9.111.1：name
+```
+
+
+

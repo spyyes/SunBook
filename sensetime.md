@@ -17,4 +17,3 @@
 ```sh
 ./build-apk.sh <sdk-path> version
 ```
-
