@@ -8,16 +8,52 @@
 xiefei@10.9.111.1
 ```
 
-## TA编译 -- 本地环境配置
-
-**服务器及账号：**
+**路径：**
 
 ```sh
-xiefei@10.9.111.1
-shurongtao@10.9.97.147
+/data/repo/android_sm8150/vendor/qcom/proprietary/securemsm/sunpeiyi/sampleclient
+#需要修改build.sh & Android.mk两个配置文件
+sudo su
+./build.sh
+#产生的结果在下面的目录
+/data/repo/android_sm8150/out/target/product/msmnile/vendor/bin/qseecom_sample_client
+```
+
+将生成的ca pull到本地，再push到手机。
+
+```sh
+adb root
+adb remount #将只读改为可写
+adb push qseecom_sample_client /vendor/bin #/vendor/bin下会自动查找/vendor/lib下的so文件
+# CA加载的TA路径在c中定义了，默认是/vendor/firmware_mnt/
+```
+
+### CA的使用方法
+
+**看一下CA代码**
+
+```sh
+./qsee_sample client -v stamp64 19 1 2
 ```
 
 
+
+### CA结构分析
+
+```
+./sampleclient
+Android.mk
+Makefile.am
+content-protection_copy.h
+README.md
+ 
+```
+
+
+
+
+
+## TA编译 -- 本地环境配置
 
 **路径：**
 
@@ -28,21 +64,26 @@ shurongtao@10.9.97.147
 		build_all.py
 		build_config_deploy.xml
 ./sm8150-la-1-0_amss_standard_oem/trustzone_images/ssg/securemsm/trustzone/qsapps #TA位置
-
 ```
 
-****
+**修改路径：**
 
-```
+1. 修改build-config.xml中的配置
+
+    llvm & ?
+
+2. 修改SConScript的配置
+
+
+
+**编译：**
+
+```sh
+./build.sh
+#或
 python trustzone_images/build/ms/build_all.py -b TZ.XF.5.0 CHIPSET=sm8150 sampleapp -c 2>&1
 python trustzone_images/build/ms/build_all.py -b TZ.XF.5.0 CHIPSET=sm8150 stapp -v 2>&1 | tee "$@"
 ```
-
-
-
-用楠姐的路径还是不行，第一步就不想，现在还是路径的原因。
-
-
 
 
 
@@ -52,10 +93,7 @@ python trustzone_images/build/ms/build_all.py -b TZ.XF.5.0 CHIPSET=sm8150 stapp 
 
 配置本地环境
 
-1. 修改build-config.xml中的配置
-2. 修改SConScript的配置
-
-
+1. 
 
 ```sh
 # 在编译时发现 LLVMBIN不存在，分析发现在
@@ -158,5 +196,13 @@ python trustzone_images/build/ms/build_all.py -b TZ.XF.5.0 CHIPSET=sm8150 sample
 
 ```
 
+```
+
+## 调试
+
+```sh
+adb logcat |grep qsee #查看所有安卓的log	
+#查看ta的log
+#查看ca的log
 ```
 
