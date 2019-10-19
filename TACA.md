@@ -33,7 +33,7 @@ adb push qseecom_sample_client /vendor/bin #/vendor/bin下会自动查找/vendor
 **看一下CA代码**
 
 ```sh
-./qsee_sample client -v stamp64 19 1 2
+    ./qseecom_sample_client -v smplap64 19 1 2
 ```
 
 
