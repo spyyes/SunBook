@@ -1,0 +1,24 @@
+### 域名注册
+阿里云
+审核
+
+node.js -- hexo基于它
+npm: 是javascript世界的包管理工具。
+安装
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+
+linux 文件结构
+
+二进制安装 软件，比如nodejs
+
+什么是deploy
+
+ttl是什么
+
+什么是CDN云存储商
+
+设置禁止缓存？？
+
+每次都要source /etc/profile
