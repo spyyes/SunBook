@@ -96,5 +96,17 @@ Program()库链接
 scp (-r) sensetime@10.9.111.1：name
 ```
 
+### lfs-windows安装
+
+lfs是git的大文件系统，在FaceUnlock项目中用到。
+
+另外需要登陆lfs，需要devcenter的账号和api key
+
+### linux tar打包
 
 
+### git commit后无法git push
+由于在git commit之前没有及时更新到最新模式
+
+### vim
+ctrl+s 锁屏 ctrl+q 解锁
